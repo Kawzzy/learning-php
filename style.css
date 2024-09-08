@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    min-height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form {
+    width: 50%;
+    padding: 25px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form label {
+    padding: 10px 0px;
+    margin: 5px 0px;
+    font-size: 16px;
+}
+
+form input {
+    padding: 10px;
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: monospace;
+}
+
+form textarea {
+    padding: 10px;
+    max-width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #888;
+    outline: none;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    padding: 10px 0px;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 10%;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.greeting {
+    text-align: center;
+}
+
+.facts {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 10px 15px;
+}
+
+.fact {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.fact-title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.fact-content: {
+    font-size: 12px;
+}
+
+.created_at {
+    font-style: italic;
+    float: right;
+}
+
+footer {
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
