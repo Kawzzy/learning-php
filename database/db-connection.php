@@ -4,7 +4,7 @@
     $user = 'learning-php';
     $pass = 'php123';
 
-    # data source bane
+    # data source name
     $dsn = "mysql:host=$host;dbname=$db";
 
     $options = [
