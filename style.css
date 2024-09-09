@@ -137,6 +137,22 @@ form button:hover {
     float: right;
 }
 
+.signup-form {
+    width: 20%;
+}
+
+.signup-form label {
+    margin: 0px;
+}
+
+.signup-form input {
+    width: 50%;
+}
+
+.signup-form button {
+    width: 30%;
+}
+
 footer {
     background-color: #333;
     padding: 15px;

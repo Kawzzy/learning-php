@@ -1,5 +1,9 @@
 <?php 
     require './database/db-connection.php';
+
+    $getAllFacts = "SELECT * FROM fact";
+    
+    $facts = $pdoConn->query($getAllFacts);
 ?>
 
 <!DOCTYPE html>

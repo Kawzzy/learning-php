@@ -1,14 +1,17 @@
 <?php 
     
-    declare(strict_types=1);
-
     require '../database/db-connection.php';
+
+    if (!isset($_SESSION)) {
+        header("Location: register.php");
+        exit();
+    }
 
     $title = $fact = '';
     
     if (isset($_POST['submit'])) {
-        if ($title == null xor $fact == null) {
-            throw new Exception("Both title and fact are required!");
+        if ($_POST['title'] == null || $_POST['fact'] == null) {
+            echo "Both title and fact are required!";
         }
         
         $title = htmlspecialchars($_POST['title']);
@@ -18,8 +21,8 @@
     
     if (!empty($title) && !empty($fact)) {
         try {
-            $add_fact = "INSERT INTO fact (title, fact) VALUES (:title, :fact)";
-            $stmt = $pdoConn->prepare($add_fact);
+            $addFact = "INSERT INTO fact (title, fact) VALUES (:title, :fact)";
+            $stmt = $pdoConn->prepare($addFact);
             $stmt->execute([
                 'title' => $title,
                 'fact' => $fact
