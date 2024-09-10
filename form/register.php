@@ -30,7 +30,7 @@
                             'pass_hash' => $hashedPass
                         ]);
 
-                        header("Location: ../index.php");
+                        echo "You are now registered. Sign in!";
                     } catch (PDOException $e) {
                         echo $e->getMessage();
                     }
@@ -57,15 +57,29 @@
 
 <body>
     <main>
-        <form class="signup-form" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
-            <label for="username">Username</label>
-            <input type="text" name="username" required>
-            <label for="pass">Password</label>
-            <input type="password" name="pass" required>
-            <label for="confPass">Confirm password</label>
-            <input type="password" name="confPass" required>
-            <button type="submit" name="submit">Sign up</button>
-        </form>
+        <div class="forms">
+            <div class="left-form">
+                <form class="signup-form" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" required>
+                    <label for="pass">Password</label>
+                    <input type="password" name="pass" required>
+                    <label for="confPass">Confirm password</label>
+                    <input type="password" name="confPass" required>
+                    <button type="submit" name="submit">Sign up</button>
+                </form>
+            </div>
+            <div class="separator"></div>
+            <div class="right-form">
+                <form class="signin-form" action="sign-in.php" method="post">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" required>
+                    <label for="pass">Password</label>
+                    <input type="password" name="pass" required>
+                    <button type="submit" name="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
     </main>
 </body>
 

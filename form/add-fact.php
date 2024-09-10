@@ -3,6 +3,10 @@
     require '../database/db-connection.php';
 
     if (!isset($_SESSION)) {
+        session_start();
+    }
+
+    if (!isset($_SESSION['id'])) {
         header("Location: register.php");
         exit();
     }
@@ -27,6 +31,9 @@
                 'title' => $title,
                 'fact' => $fact
             ]);
+
+            header("Location: ../index.php");
+            exit();
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

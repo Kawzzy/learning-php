@@ -15,8 +15,12 @@ header {
 
 nav {
     background-color: #444;
-    padding: 10px;
+    padding: 10px 350px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 nav a {
@@ -137,20 +141,67 @@ form button:hover {
     float: right;
 }
 
-.signup-form {
-    width: 20%;
-}
-
-.signup-form label {
+.forms .signup-form label,
+.forms .signin-form label {
     margin: 0px;
 }
 
-.signup-form input {
+.forms .signup-form input,
+.forms .signin-form input {
     width: 50%;
 }
 
-.signup-form button {
+.forms .signup-form button,
+.forms .signin-form button {
     width: 30%;
+}
+
+.forms {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.forms .signup-form,
+.forms .signin-form {
+    width: 22em;
+    height: 28em;
+}
+
+.left-form,
+.right-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: inherit;
+}
+
+.separator {
+    border: 2px solid #ccc;
+    height: 500px;
+    margin: 0;
+}
+
+.links {
+    flex: 1;
+}
+
+.user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info p {
+    color: deepskyblue;
 }
 
 footer {

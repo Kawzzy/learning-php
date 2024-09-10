@@ -1,19 +1,25 @@
-<?php 
-    require './database/db-connection.php';
+<?php
+require './database/db-connection.php';
 
-    $getAllFacts = "SELECT * FROM fact";
-    
-    $facts = $pdoConn->query($getAllFacts);
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+$getAllFacts = "SELECT * FROM fact";
+
+$facts = $pdoConn->query($getAllFacts);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Funny Facts</title>
 </head>
+
 <body>
 
     <header>
@@ -21,8 +27,18 @@
     </header>
 
     <nav>
-        <a href="index.php">Home</a>
-        <a href="./form/add-fact.php">Add Yours</a>
+        <div class="links">
+            <a href="index.php">Home</a>
+            <a href="./form/add-fact.php">Add Yours</a>
+        </div>
+        <div class="user-info">
+            <?php if (isset($_SESSION['id'])) : ?>
+                <p>
+                    Welcome <strong><?= ucfirst($_SESSION['username']) ?></strong>!
+                </p>
+                <a href="./form/logout.php">Logout</a>
+            <?php endif; ?>
+        </div>
     </nav>
 
     <main>
@@ -32,7 +48,7 @@
                 <p>Here, you'll find some hilarious and interesting facts of people from all around the world.</p>
             </div>
             <div class="facts">
-                 <?php foreach ($facts as $fact): ?>
+                <?php foreach ($facts as $fact): ?>
                     <div class="fact">
                         <p class="fact-title">
                             <?= $fact->title ?>
@@ -54,4 +70,5 @@
     </footer>
 
 </body>
+
 </html>
